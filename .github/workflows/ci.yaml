@@ -4,6 +4,10 @@ on:
     branches: [ "main" ]
   workflow_dispatch:
 
+permissions:
+  contents: read
+  id-token: write
+
 jobs:
   call-central-pipeline:
     uses: App-of-apps-argo-example/pipeline-templates/.github/workflows/reusable-build-deploy.yaml@main
