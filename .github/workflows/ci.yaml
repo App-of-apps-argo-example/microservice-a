@@ -1,0 +1,15 @@
+name: Application CI
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  call-central-pipeline:
+    uses: App-of-apps-argo-example/pipeline-templates/.github/workflows/reusable-build-deploy.yaml@main
+    with:
+      app_name: "microservice-a"
+    secrets:
+      GITOPS_BOT_TOKEN: ${{ secrets.GITOPS_BOT_TOKEN }}
+      # Optional: pass WIF parameters if configured
+      # WIF_PROVIDER: ${{ secrets.WIF_PROVIDER }}
+      # WIF_SERVICE_ACCOUNT: ${{ secrets.WIF_SERVICE_ACCOUNT }}
