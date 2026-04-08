@@ -2,6 +2,7 @@ name: Application CI
 on:
   push:
     branches: [ "main" ]
+  workflow_dispatch:
 
 jobs:
   call-central-pipeline:
@@ -10,6 +11,3 @@ jobs:
       app_name: "microservice-a"
     secrets:
       GITOPS_BOT_TOKEN: ${{ secrets.GITOPS_BOT_TOKEN }}
-      # Optional: pass WIF parameters if configured
-      # WIF_PROVIDER: ${{ secrets.WIF_PROVIDER }}
-      # WIF_SERVICE_ACCOUNT: ${{ secrets.WIF_SERVICE_ACCOUNT }}
