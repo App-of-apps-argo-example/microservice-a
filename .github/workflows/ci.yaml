@@ -7,6 +7,8 @@ on:
 permissions:
   contents: write
   id-token: write
+  security-events: write
+  actions: read
 
 jobs:
   call-central-pipeline:
